@@ -1,5 +1,7 @@
 import { useState , useRef } from "react";
 import { BiMessageAdd } from "react-icons/bi";
+import { TodoItemsContext} from "../store/todo-items-store";
+import { useContext } from "react";
 
 function AddTodo({ oneNewItem }) {
 
@@ -7,6 +9,7 @@ function AddTodo({ oneNewItem }) {
   // const [dueDate, setDueDate] = useState('');
   const todoNameElement = useRef();
   const dueDateElement = useRef();
+  const{addNewItem}= useContext(TodoItemsContext);
 
 
   // const handleNameChange = () => {
@@ -28,7 +31,7 @@ function AddTodo({ oneNewItem }) {
     todoNameElement.current.value="";
     dueDateElement.current.value="";
     event.preventDefault();
-    oneNewItem(todoName, dueDate);
+    addNewItem(todoName, dueDate);
     // setDueDate("");
     // setTodoName("");
   }
