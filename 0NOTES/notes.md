@@ -323,3 +323,15 @@ Note :- if child want to communicate with the parent , it is done via (Emit Even
 6. Dynamic Data: Combine context value with state.  
 7. Export Functions: Context can also export functions for actions.  
 8.Logic Separation: This helps keep the UI and business logic separate from each other.
+
+ # Use Reducer
+1. Definition: useReducer is a React hook that offers enhanced control over state operations compared to useState, particularly when dealing with complex state logic.
+2. Core Components:
+ * Reducer: A pure function that processes the current state and an action to return a new state.
+ * Action: An object that describes what occurred, typically containing a type property.
+3. Initialization: It is invoked using the syntax 
+    * const [state, dispatch] = useReducer(reducer, initialState).
+    
+4. Dispatch Function: Actions are triggered using the dispatch function, which calls the reducer with the current state and the specified action.
+5. Use Cases: Ideal for handling state in large components or situations where the upcoming state relies on the previous one.
+6. Predictable State Management: Its structured approach leads to more predictable and maintainable state management.
